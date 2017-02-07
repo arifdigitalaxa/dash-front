@@ -2,8 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Router, Route, browserHistory, IndexRoute } from "react-router";
 
-import Layout from "./components/Layout";
-
 // User pages
 import User from "./pages/user/User";
 

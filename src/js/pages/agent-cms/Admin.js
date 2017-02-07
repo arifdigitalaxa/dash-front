@@ -1,6 +1,6 @@
 import React from 'react'
 
-import AgentRegister from "../../components/agent-cms/Agent-Register"
+import AgentRegister from "../../components/agent-cms/AgentRegister"
 
 export default class AgentAdmin extends React.Component {
   constructor() {
@@ -25,7 +25,7 @@ export default class AgentAdmin extends React.Component {
 				</ol>
 			</div>
 		</div>
-        <h1>{this.state.title}</h1>
+        <h1><strong>{this.state.title}</strong></h1>
         <AgentRegister />
       </div>
     );
