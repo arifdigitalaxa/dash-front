@@ -17,16 +17,18 @@ export default class AgentAdmin extends React.Component {
   render() {
     return (
       <div>
-      	<div class="row">
-			<div class="col-lg-12">
-				<ol class="breadcrumb">
-					<li><i class="fa fa-home"></i><a href="/">Home</a></li>
-					<li><i class="fa fa-bars"></i>Agent Admin</li>
-				</ol>
-			</div>
-		</div>
-        <h1><strong>{this.state.title}</strong></h1>
-        <AgentRegister />
+        <div class="row">
+          <div class="col-lg-12">
+            <h3 class="page-header"><i class="fa fa-file-text-o"></i> {this.state.title}</h3>
+            <ol class="breadcrumb">
+              <li><i class="fa fa-home"></i><a href="/">Home</a></li>
+              <li><i class="fa fa-bars"></i>Agent Admin</li>
+            </ol>
+          </div>
+        </div>
+        <div class="row">
+             <AgentRegister /> 
+        </div>
       </div>
     );
   }

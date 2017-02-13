@@ -1,5 +1,8 @@
 import React from "react";
-require ('../../assets/alertify.min.js');
+import '../../assets/sweetalert.min.js';
+import '../../../css/sweetalert.css'
+
+import AgentEdit from './AgentEdit'
 
 export default class AgentRegister extends React.Component {
   constructor() {
@@ -14,22 +17,47 @@ export default class AgentRegister extends React.Component {
   }
 
   onSubmit(event) {
-    alertify.alert('This email is saved: ' + this.state.value);
-    //alert('A name was submitted: ' + this.state.value);
+    fetch('http://localhost:1337/agent/register',{
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: this.state.value
+      })
+    })
+    .then((response) => response.json())
+    .then((responseJson) => {
+        console.log(responseJson)
+        swal("Success!",this.state.value + " has been registered!","success")
+      })
+    .catch((error) => {
+      console.error(error);
+    });
     event.preventDefault();
   }
 
   render() {
     return (
       <div>
-        <form onSubmit={this.onSubmit}>
-          <div class="row">
-            <div class="col-md-12">
-                <label for="exampleInputEmail1">Email </label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"></input>
+        <div class="col-lg-4">
+          <section class="panel">
+            <header class="panel-heading">
+              <i class="fa fa-envelope-o" aria-hidden="true"></i> Register Agents' Email
+            </header>
+            <div class="panel-body">
+              <form onSubmit={this.onSubmit} role="form">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input id="email" name="email"  type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" required="" onChange = {this.onChange} value = {this.state.value} />
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
             </div>
-          </div>
-        </form>
+          </section>
+        </div>
+        <AgentEdit />
       </div>
     );
   }
