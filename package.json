@@ -15,9 +15,12 @@
     "babel-preset-stage-0": "^6.3.13",
     "css-loader": "^0.26.1",
     "react": "^0.14.6",
+    "react-async-render": "0.0.2",
     "react-bootstrap": "^0.30.7",
     "react-dom": "^0.14.6",
+    "react-redux": "^5.0.2",
     "react-router": "^3.0.2",
+    "redux": "^3.6.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.14.1"
@@ -27,5 +30,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Arif Zakaria",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "redux-devtools": "^3.3.2"
+  }
 }

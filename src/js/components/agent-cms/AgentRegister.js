@@ -1,4 +1,5 @@
 import React from "react";
+
 import '../../assets/sweetalert.min.js';
 import '../../../css/sweetalert.css'
 
@@ -10,6 +11,7 @@ export default class AgentRegister extends React.Component {
     this.state = {value: ''};
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+
   }
 
   onChange(event) {
@@ -37,6 +39,8 @@ export default class AgentRegister extends React.Component {
     });
     event.preventDefault();
   }
+
+  
 
   render() {
     return (
