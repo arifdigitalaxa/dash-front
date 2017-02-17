@@ -11,7 +11,7 @@ export default class AgentEdit extends React.Component {
     };
     //console.log('trigger warning 2')
 
-    //this.onGet = this.onGet.bind(this);
+    this.onGet = this.onGet.bind(this);
     this.onEdit = this.onEdit.bind(this);
     this.onDelete = this.onDelete.bind(this);
   }
@@ -25,17 +25,17 @@ export default class AgentEdit extends React.Component {
     event.preventDefault();
   }
 
-  // onGet(event) {
-  //   fetch('http://localhost:1337/agent/register')
-  //   .then((response) => response.json())
-  //   .then((responseJson) => {
-  //     this.state.agents = responseJson;
+  onGet() {
+    fetch('http://localhost:1337/agent/register')
+    .then((response) => response.json())
+    .then((responseJson) => {
+      this.state.agents = responseJson;
       
-  //     })
-  //   .catch((error) => {
-  //     console.error(error);
-  //   });
-  // }
+      })
+    .catch((error) => {
+      console.error(error);
+    });
+  }
 
   // componentDidMount(){
   //   fetch('http://localhost:1337/agent')
